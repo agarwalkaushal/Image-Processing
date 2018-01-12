@@ -128,8 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
             String base64Data = params[0];
             String requestURL =
-                    "https://vision.googleapis.com/v1/images:annotate?key=" +
-                            getResources().getString(R.string.mykey);
+                    "https://vision.googleapis.com/v1/images:annotate?key=" +"key goes here";
             // Create an array containing
             // the LABEL_DETECTION feature
             JSONArray features = new JSONArray();
