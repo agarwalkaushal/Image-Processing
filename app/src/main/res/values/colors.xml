@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+    <color name="backgroundLayout1">#ffffff</color>
+    <color name="backgroundLayout2">#000000</color>
+    <color name="colorFab">#ffffff</color>
+    <color name="colorButton">#00ffffff</color>
+    <color name="ripple">#64ece5e5</color>
+    <color name="ripple1">#28ece5e5</color>
+
+</resources>
