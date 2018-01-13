@@ -110,6 +110,13 @@ public class selectOp extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        finish();
+        overridePendingTransition( R.anim.slide_out_right, R.anim.slide_in_left );
+    }
+
 
     }
 

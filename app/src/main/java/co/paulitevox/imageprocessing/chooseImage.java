@@ -190,7 +190,7 @@ public class chooseImage extends Fragment {
                                             Intent in1 = new Intent(getActivity(), selectOp.class);
                                             in1.putExtra("image", filename);
                                             startActivity(in1);
-                                            //getActivity().finish();
+                                            getActivity().overridePendingTransition( R.anim.slide_in_up, R.anim.slide_out_up );
                                         } catch (Exception e) {
                                             e.printStackTrace();
                                         }
@@ -215,6 +215,7 @@ public class chooseImage extends Fragment {
                                              Intent in1 = new Intent(getActivity(), selectOp.class);
                                              in1.putExtra("image", filename);
                                              startActivity(in1);
+                                             getActivity().overridePendingTransition( R.anim.slide_in_up, R.anim.slide_out_up );
                                             // getActivity().finish();
                                          } catch (Exception e) {
                                              e.printStackTrace();

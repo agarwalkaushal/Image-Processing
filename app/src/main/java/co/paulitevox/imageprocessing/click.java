@@ -288,6 +288,7 @@ public class click extends Fragment implements Callback,OnClickListener {
                 intent.putExtra("BitmapImage", rotatedBitmap);
                 flashOffButton();
                 startActivity(intent);
+                getActivity().overridePendingTransition( R.anim.slide_in_up, R.anim.slide_out_up );
                 break;
             default:
                 break;
