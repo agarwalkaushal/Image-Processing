@@ -61,6 +61,7 @@ public class chooseImage extends Fragment {
     private FloatingActionButton choose;
     private FloatingActionButton crop;
     private ImageView imageView;
+    private ImageView imageViewBlur;
     private Animation anim;
     private Uri filePath;
     private Button choosebefore;
@@ -126,6 +127,7 @@ public class chooseImage extends Fragment {
         choose = (FloatingActionButton) view.findViewById(R.id.choose);
         crop = (FloatingActionButton) view.findViewById(R.id.crop);
         imageView = (ImageView) view.findViewById(R.id.chooseFromGallery);
+        imageViewBlur = (ImageView) view.findViewById(R.id.chooseFromGalleryBlur);
         final FlipAnimation flipAnimation = new FlipAnimation(before, after);
         after.setVisibility(View.GONE);
         done.setVisibility(View.INVISIBLE);
@@ -247,6 +249,7 @@ public class chooseImage extends Fragment {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), imageUri);
                 decode();
                 imageView.setImageURI(imageUri);
+                imageViewBlur.setImageURI(imageUri);
                 open.setVisibility(View.GONE);
                 choose.setVisibility(View.VISIBLE);
                 done.setVisibility(View.VISIBLE);
@@ -341,6 +344,7 @@ public class chooseImage extends Fragment {
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
                 imageView.setImageBitmap(bitmap);
+                imageViewBlur.setImageBitmap(bitmap);
                 decode();
                 open.setVisibility(View.GONE);
                 choose.setVisibility(View.VISIBLE);
@@ -362,6 +366,7 @@ public class chooseImage extends Fragment {
                                 getContentResolver().openInputStream(resultUri));
                         decode();
                         imageView.setImageBitmap(bitmap);
+                        imageViewBlur.setImageBitmap(bitmap);
                         return;
 
                     } catch (IOException e) {

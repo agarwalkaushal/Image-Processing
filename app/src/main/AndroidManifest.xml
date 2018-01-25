@@ -36,6 +36,7 @@
         <activity
             android:name=".SplashScreen"
             android:screenOrientation="portrait"
+            android:resizeableActivity="false"
             android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,6 +47,7 @@
         <activity
             android:name=".photo"
             android:label="@string/photo"
+            android:resizeableActivity="false"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -56,6 +58,7 @@
         <activity
             android:name=".selectOp"
             android:label="@string/app_name"
+            android:resizeableActivity="false"
             android:theme="@style/parallax"></activity>
     </application>
 

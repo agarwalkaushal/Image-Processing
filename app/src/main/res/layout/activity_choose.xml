@@ -8,16 +8,31 @@
     android:orientation="vertical"
     android:weightSum="100">
 
-
-    <ImageView
-        android:id="@+id/chooseFromGallery"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:animateLayoutChanges="true"
         android:layout_height="0dp"
-        android:layout_weight="70"
-        android:contentDescription="No Image Selected"
-        android:src="@drawable/no_image"
-        android:scaleType="fitCenter" />
+        android:layout_weight="70">
+        <ImageView
+            android:id="@+id/chooseFromGalleryBlur"
+            android:layout_width="match_parent"
+            android:animateLayoutChanges="true"
+            android:layout_height="match_parent"
+            android:contentDescription="No Image Selected"
+            android:alpha="0.5"
+            android:src="@drawable/no_image"
+            android:scaleType="center" />
+        <ImageView
+            android:id="@+id/chooseFromGallery"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:animateLayoutChanges="true"
+            android:layout_height="match_parent"
+            android:contentDescription="No Image Selected"
+            android:src="@drawable/no_image"
+            android:scaleType="fitCenter" />
+
+    </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/open"
         android:animateLayoutChanges="true"
