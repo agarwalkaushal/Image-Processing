@@ -15,7 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.google.android.gms.ads.MobileAds;
 import static android.content.ContentValues.TAG;
 
 
@@ -26,6 +26,7 @@ public class photo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_photo);
+        MobileAds.initialize(this, "ca-app-pub-1736689032211248~1685517737");
         int PERMISSION_ALL = 1;
         String[] PERMISSIONS = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
         if (Build.VERSION.SDK_INT >= 23) {

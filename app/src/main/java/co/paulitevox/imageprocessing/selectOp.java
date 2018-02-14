@@ -24,6 +24,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.bumptech.glide.Glide;
 
 import java.io.File;
@@ -37,6 +39,7 @@ import static android.R.attr.data;
 public class selectOp extends AppCompatActivity {
 
     private ImageView image;
+    private InterstitialAd mInterstitialAd;
     ExpandableHeightGridView  grid;
     String[] web = {
             "LABEL",
@@ -65,6 +68,11 @@ public class selectOp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_select_op);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-1736689032211248/1532995567");
+        AdRequest request = new AdRequest.Builder().addTestDevice("DB87789ADD286D94F9D5F938BA2BC5A6").build();
+        request.isTestDevice(selectOp.this);
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
         image=(ImageView) findViewById(R.id.image);
         Bitmap choose = null;
         Bitmap click=null;
@@ -103,7 +111,12 @@ public class selectOp extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Toast.makeText(selectOp.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
+                //Toast.makeText(selectOp.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
 
             }
         });
