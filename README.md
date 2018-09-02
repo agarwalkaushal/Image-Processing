@@ -1,2 +1,2 @@
 # imageprocessing
-Integreated all of google's vision power.Be any image it will provide you with results that will amaze you.
+Using Google's cloud vision api, this app lets you extract labels, text and various other entities.
